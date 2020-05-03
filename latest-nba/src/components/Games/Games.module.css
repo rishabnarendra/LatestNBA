@@ -1,0 +1,30 @@
+.container {
+    flex-direction: column;
+    margin: 3% 0;
+}
+
+.card {
+    margin: 2% 2% 2% 0 !important;
+    transition: all .2s ease-in-out;
+}
+
+.arena {
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.city {
+    text-align: center;
+    font-size: 13px;
+    color: #696969;
+}
+
+.score {
+    text-align: center;
+}
+
+.logo {
+    height: 40px;
+    width: 40px;
+}
