@@ -13,9 +13,9 @@ const Games = ({ gamesByDate }) => {
     return (
         <div>
             { !gamesByDate ? <p>No games today</p> : null }
-            {gamesByDate.map(game => 
-                <Grid container justify = "center">
-                    <Grid item xs = { 5 } md = { 2 } component = { Card } className = { styles.card }>
+            <Grid container justify = "center">
+                {gamesByDate.map(game => 
+                    <Grid item xs={10} sm={3} md={3} component = { Card } className = { styles.card }>
                         <CardContent>
                             <p className = {styles.arena}>{ game.arena }</p>
                             <p className = {styles.city}>{ game.city }</p>
@@ -23,8 +23,8 @@ const Games = ({ gamesByDate }) => {
                             <p className = { styles.score }><img className = {styles.logo} src = {game.hTeam.logo}/> &nbsp; { game.hTeam.shortName } - <CountUp start = { 0 } end = { game.hTeam.score.points } duration = { 3.00 } separator = "," /></p>
                         </CardContent>
                     </Grid>
-                </Grid>
-            )}
+                )}
+            </Grid>
         </div>
     )
 }
