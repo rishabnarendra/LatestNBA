@@ -9,6 +9,7 @@
 }
 
 .arena {
+    border-style: double;
     text-align: center;
     font-weight: bold;
     font-size: 18px;
@@ -27,4 +28,19 @@
 .logo {
     height: 40px;
     width: 40px;
+}
+
+.noGames {
+    padding: 1% 2% 1% 2%;
+    font-family: 'Times New Roman', Times, serif;
+    border-style: solid;
+    border-color: #000000;
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    outline: none;
+    margin-top: 4%;
+    font-size: 25px;
+    color: #000000;
+    box-shadow: 100px;
 }

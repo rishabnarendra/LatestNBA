@@ -7,6 +7,7 @@ import './App.css';
 class App extends Component {
 
   state = {
+    selectedConference: 'east',
     yyyy: '',
     mm: '',
     dd: '',
@@ -34,18 +35,23 @@ class App extends Component {
     // }
     // if(dd < 10) dd = '0' + dd;
     // if(mm < 10) mm = '0' + mm;
-    //this.setState({ easternConferenceStandings: await fetchEasternConferenceStandings() }); 
-    //this.setState({ easternConferenceTeams: await fetchEasternConferenceTeams() });
-    //this.setState({ westernConferenceStandings: await fetchWesternConferenceStandings() });
+    // this.setState({ easternConferenceStandings: await fetchEasternConferenceStandings() }); 
+    // this.setState({ easternConferenceTeams: await fetchEasternConferenceTeams() });
+    // this.setState({ westernConferenceStandings: await fetchWesternConferenceStandings() });
     // this.setState({ westernConferenceTeams: await fetchWesternConferenceTeams() }); 
-    this.setState({ gamesByDate: await fetchGamesByDate('2019', '02', '05') });
+    // this.setState({ gamesByDate: await fetchGamesByDate('2019', '02', '05') });
   }
     // let yyyy = '2019';
     // let mm = '01';
     // let dd = '02';
 
+  changeConference(selectedConference) {
+    this.setState({ selectedConference })
+  }
+
   render() {
     const { date } = this.state; 
+    const { selectedConference } = this.state; 
     const { gamesByDate } = this.state; 
     const { easternConferenceStandings } = this.state; 
     const { easternConferenceTeams } = this.state; 
@@ -56,9 +62,19 @@ class App extends Component {
       <div>
         {/* <PickDate date = { date } /> */}
         <Games gamesByDate = { gamesByDate } />
-        {/* <Standings conferenceStandings = { easternConferenceStandings } teams = { easternConferenceTeams } /> */}
-        {/* <h1 style = {{ textAlign: 'center' }}>Western Conference</h1>
-        <Standings conferenceStandings = { westernConferenceStandings } teams = { westernConferenceTeams }  /> */}
+        <div style = {{ textAlign: 'center' }}>
+          { selectedConference === 'east' ?
+            <p onClick = { () => this.changeConference('east') } style = {{ cursor: 'pointer', fontWeight: 'bold', color: 'grey', marginLeft: '7%', float: 'left' }}>Eastern Conference</p> :
+            <p onClick = { () => this.changeConference('east') } style = {{ cursor: 'pointer', color: 'grey', marginLeft: '7%', float: 'left' }}>Eastern Conference</p>
+          }
+          { selectedConference === 'west' ?
+            <p onClick = { () => this.changeConference('west') } style = {{ cursor: 'pointer', fontWeight: 'bold', color: 'grey', marginRight: '7%', float: 'right' }}>Western Conference</p> :
+            <p onClick = { () => this.changeConference('west') } style = {{ cursor: 'pointer', color: 'grey', marginRight: '7%', float: 'right' }}>Western Conference</p>
+          }
+        </div>
+        { selectedConference === 'east' ? 
+          <Standings conferenceStandings = { easternConferenceStandings } teams = { easternConferenceTeams } /> :
+          <Standings conferenceStandings = { westernConferenceStandings } teams = { westernConferenceTeams } /> }
       </div>
     );
   }

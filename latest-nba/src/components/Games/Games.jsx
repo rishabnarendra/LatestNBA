@@ -12,13 +12,13 @@ const Games = ({ gamesByDate }) => {
 
     return (
         <div>
-            { !gamesByDate ? <p>No games today</p> : null }
+            { gamesByDate.length === 0 ? <div style = {{ textAlign: 'center' }}><button className = { styles.noGames }>No Games Today</button></div> : null }
             <Grid container justify = "center">
                 {gamesByDate.map(game => 
                     <Grid item xs={10} sm={3} md={3} component = { Card } className = { styles.card }>
                         <CardContent>
-                            <p className = {styles.arena}>{ game.arena }</p>
-                            <p className = {styles.city}>{ game.city }</p>
+                            <p className = { styles.arena }>{ game.arena }</p>
+                            <p className = { styles.city }>{ game.city }</p>
                             <p className = { styles.score }><img className = {styles.logo} src = {game.vTeam.logo}/> &nbsp; { game.vTeam.shortName } - <CountUp start = { 0 } end = { game.vTeam.score.points } duration = { 3.00 } separator = "," /></p>
                             <p className = { styles.score }><img className = {styles.logo} src = {game.hTeam.logo}/> &nbsp; { game.hTeam.shortName } - <CountUp start = { 0 } end = { game.hTeam.score.points } duration = { 3.00 } separator = "," /></p>
                         </CardContent>
