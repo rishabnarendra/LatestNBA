@@ -3,18 +3,17 @@ import DatePicker from 'react-date-picker';
 
 class Date extends Component {
   state = {
-    date: new Date(),
+    date: '',
   }
 
   onChange = date => this.setState({ date })
 
   render() {
     return (
-      <div>
-          est
+      <div style = {{ 'text-align': 'center' }}>
         <DatePicker
-          onChange={this.onChange}
-          value={this.state.date}
+          onChange = { this.onChange }
+          value = { this.state.date }
         />
       </div>
     );

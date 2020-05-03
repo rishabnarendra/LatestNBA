@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
 import { fetchEasternConferenceStandings, fetchEasternConferenceTeams, fetchWesternConferenceTeams, fetchGamesByDate, fetchWesternConferenceStandings } from './api';
 import { Date, Games, Standings } from './components';
 import './App.css';
 
-class App extends React.Component {
+class App extends Component {
 
   state = {
     yyyy: '',
