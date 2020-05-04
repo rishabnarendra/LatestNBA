@@ -1,8 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'; 
 import './App.css';
 import { fetchEasternConferenceStandings, fetchEasternConferenceTeams, fetchWesternConferenceTeams, fetchGamesByDate, fetchWesternConferenceStandings } from './api';
 import { PickDate, Games, Standings } from './components';
-import './App.css';
 
 class App extends Component {
 
@@ -35,11 +34,11 @@ class App extends Component {
     // }
     // if(dd < 10) dd = '0' + dd;
     // if(mm < 10) mm = '0' + mm;
-    // this.setState({ easternConferenceStandings: await fetchEasternConferenceStandings() }); 
-    // this.setState({ easternConferenceTeams: await fetchEasternConferenceTeams() });
-    // this.setState({ westernConferenceStandings: await fetchWesternConferenceStandings() });
-    // this.setState({ westernConferenceTeams: await fetchWesternConferenceTeams() }); 
-    // this.setState({ gamesByDate: await fetchGamesByDate('2019', '02', '05') });
+    this.setState({ easternConferenceStandings: await fetchEasternConferenceStandings() }); 
+    this.setState({ easternConferenceTeams: await fetchEasternConferenceTeams() });
+    this.setState({ westernConferenceStandings: await fetchWesternConferenceStandings() });
+    this.setState({ westernConferenceTeams: await fetchWesternConferenceTeams() }); 
+    this.setState({ gamesByDate: await fetchGamesByDate('2019', '02', '05') });
   }
     // let yyyy = '2019';
     // let mm = '01';
@@ -61,7 +60,9 @@ class App extends Component {
     return (
       <div>
         {/* <PickDate date = { date } /> */}
-        <Games gamesByDate = { gamesByDate } />
+        <div class = "background">
+          <Games gamesByDate = { gamesByDate } />
+        </div>
         <div style = {{ textAlign: 'center' }}>
           { selectedConference === 'east' ?
             <p onClick = { () => this.changeConference('east') } style = {{ cursor: 'pointer', fontWeight: 'bold', color: 'grey', marginLeft: '7%', float: 'left' }}>Eastern Conference</p> :

@@ -6,6 +6,7 @@
 .card {
     margin: 2% 2% 2% 0 !important;
     transition: all .2s ease-in-out;
+    background: -webkit-linear-gradient(#322e2f, #696969 30%, #322e2f);
 }
 
 .arena {
@@ -13,16 +14,18 @@
     text-align: center;
     font-weight: bold;
     font-size: 18px;
+    color: white;
 }
 
 .city {
     text-align: center;
-    font-size: 13px;
-    color: #696969;
+    font-size: 13px;    
+    color: white;
 }
 
 .score {
     text-align: center;
+    color: white;
 }
 
 .logo {
