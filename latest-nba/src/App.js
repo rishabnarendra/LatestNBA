@@ -34,15 +34,32 @@ class App extends Component {
     // }
     // if(dd < 10) dd = '0' + dd;
     // if(mm < 10) mm = '0' + mm;
-    this.setState({ easternConferenceStandings: await fetchEasternConferenceStandings() }); 
+    let east = await fetchEasternConferenceStandings(); 
+    this.setState({ easternConferenceStandings: this.sortConferenceStandings(east)});
     this.setState({ easternConferenceTeams: await fetchEasternConferenceTeams() });
-    this.setState({ westernConferenceStandings: await fetchWesternConferenceStandings() });
+    let west = await fetchWesternConferenceStandings(); 
+    this.setState({ westernConferenceStandings: this.sortConferenceStandings(west) });
     this.setState({ westernConferenceTeams: await fetchWesternConferenceTeams() }); 
-    this.setState({ gamesByDate: await fetchGamesByDate('2019', '02', '05') });
+    // this.setState({ gamesByDate: await fetchGamesByDate('2019', '02', '05') });
   }
     // let yyyy = '2019';
     // let mm = '01';
     // let dd = '02';
+
+  sortConferenceStandings(standings) {
+    for(let i = 0; i < standings.length; i++) {
+      let max = i; 
+      for(let j = i + 1; j < standings.length; j++) {
+        if(standings[j].win > standings[max].win) {
+          max = j; 
+        }
+      }
+      let temp = standings[max];
+      standings[max] = standings[i];
+      standings[i] = temp; 
+    }
+    return standings; 
+  }
 
   changeConference(selectedConference) {
     this.setState({ selectedConference })
