@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "96e925d73ef6a19f811c352294d70bbf",
+    "revision": "82b9afec8909884267aa95e10c404b4f",
     "url": "/LatestNBA/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/LatestNBA/static/css/2.93b3b32d.chunk.css"
   },
   {
-    "revision": "1366efd47d9ed7b12d22",
+    "revision": "5be50c58b9c96bf91f4d",
     "url": "/LatestNBA/static/css/main.f2e0fb94.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/LatestNBA/static/js/2.ecfc97fa.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "1366efd47d9ed7b12d22",
-    "url": "/LatestNBA/static/js/main.5a1c0d64.chunk.js"
+    "revision": "5be50c58b9c96bf91f4d",
+    "url": "/LatestNBA/static/js/main.4c044cee.chunk.js"
   },
   {
     "revision": "4c35eb886cdccee650e6",
