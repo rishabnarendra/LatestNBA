@@ -40,7 +40,7 @@ class App extends Component {
     let west = await fetchWesternConferenceStandings(); 
     this.setState({ westernConferenceStandings: this.sortConferenceStandings(west) });
     this.setState({ westernConferenceTeams: await fetchWesternConferenceTeams() }); 
-    // this.setState({ gamesByDate: await fetchGamesByDate('2019', '02', '05') });
+    this.setState({ gamesByDate: await fetchGamesByDate('2019', '02', '05') });
   }
     // let yyyy = '2019';
     // let mm = '01';
